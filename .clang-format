@@ -1,0 +1,21 @@
+# Requires clang-format 16+.
+BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 100
+LineEnding: LF
+InsertNewlineAtEOF: true
+
+# Braces on every if/for/while body: no "goto fail" style bugs.
+InsertBraces: true
+# Function bodies always on their own lines; easier to read diffs and set breakpoints.
+AllowShortFunctionsOnASingleLine: None
+
+AlignConsecutiveMacros: Consecutive
+
+# Include order: own headers ("..."), then libraries and system (<...>), one block each.
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '^"'
+    Priority: 1
+  - Regex: '^<'
+    Priority: 2

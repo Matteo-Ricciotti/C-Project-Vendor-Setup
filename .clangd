@@ -1,0 +1,9 @@
+# Read flags from the Clang build: no compile_commands.json symlink needed.
+CompileFlags:
+  CompilationDatabase: build-clang
+---
+# Vendored code: no diagnostics, we don't fix upstream warnings.
+If:
+  PathMatch: third_party/.*
+Diagnostics:
+  Suppress: "*"

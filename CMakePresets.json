@@ -1,0 +1,40 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "clang",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-clang",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "SANITIZE": "ON"
+      }
+    },
+    {
+      "name": "gcc",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-gcc",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "SANITIZE": "ON"
+      }
+    },
+    {
+      "name": "release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build-release",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_BUILD_TYPE": "Release",
+        "SANITIZE": "OFF"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "clang", "configurePreset": "clang" },
+    { "name": "gcc", "configurePreset": "gcc" },
+    { "name": "release", "configurePreset": "release" }
+  ]
+}
