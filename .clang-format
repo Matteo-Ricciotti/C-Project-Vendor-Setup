@@ -4,6 +4,7 @@ IndentWidth: 4
 ColumnLimit: 100
 LineEnding: LF
 InsertNewlineAtEOF: true
+PointerAlignment: Left
 
 # Braces on every if/for/while body: no "goto fail" style bugs.
 InsertBraces: true
